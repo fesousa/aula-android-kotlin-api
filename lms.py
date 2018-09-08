@@ -30,7 +30,7 @@ def post():
             nid = 1
         content["id"] = nid
         disciplinas.append(content)
-		return jsonify({"status":"OK", "disciplina adicionada com sucesso"})
+        return jsonify({"status":"OK", "msg":"disciplina adicionada com sucesso"})
     except Exception as ex:
         return jsonify({"status":"ERRO", "msg":str(ex)})
 
@@ -39,7 +39,7 @@ def delete(id):
     global disciplinas
     try:
         disciplinas = [e for e in disciplinas if e["id"] != id]
-        return jsonify({"status":"OK", "disciplina removida com sucesso"})
+        return jsonify({"status":"OK", "msg":"disciplina removida com sucesso"})
     except Exception as ex:
         return jsonify({"status":"ERRO", "msg":str(ex)})
 
